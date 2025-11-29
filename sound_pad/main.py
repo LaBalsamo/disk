@@ -5,9 +5,10 @@ import ast
 import os
 import subprocess
 from mutagen import File as AudioFile  # pip install mutagen
-from pydub import AudioSegment        # pip install pydub
+from pydub import AudioSegment      # pip install pydub
 import sounddevice as sd
 import numpy as np
+
 
 root = tk.Tk()
 root.title("Audio List Manager")
