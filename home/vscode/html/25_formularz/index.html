@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Anketa</h1>
+    <form action="mailto:wspi@wsip.pl?subject-Temat ankiety" method="post">
+        <p><strong>Imie</strong>: <input type="text" name="imie" size="30" maxlength="40" required></p>
+        
+        <p><strong>Nazwisko</strong>: <input type="text" name="Nazwisko" size="30" maxlength="40" required></p>
+    
+        <p><strong>Tytul</strong>: <input type="text" name="Tztul" size="30" maxlength="40" required></p>
+    
+        <p><strong>Tytuł kursu</strong>:
+        <select>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="CMS">CMS</option>
+            <option value="SQL">SQL</option>
+        </select></p>
+        <p><input type="reset" value="reset">
+        <input type="submit" value="submit"></p>
+    </form>
+</body>
+</html>

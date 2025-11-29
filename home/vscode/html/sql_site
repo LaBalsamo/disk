@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Database Creator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        textarea { width: 100%; height: 120px; }
+        button { padding: 10px 20px; margin-top: 10px; }
+        pre { background: #f4f4f4; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>AI Database Creator</h1>
+    <p>Describe your database structure (tables, columns, types):</p>
+    <textarea id="dbStructure" placeholder="e.g. Users(id INT, name VARCHAR(100)), Posts(id INT, user_id INT, content TEXT)"></textarea>
+    <br>
+    <button onclick="generateSQL()">Create Database SQL</button>
+    <h2>Generated SQL:</h2>
+    <pre id="sqlOutput"></pre>
+
+    <script>
+        async function generateSQL() {
+            const structure = document.getElementById('dbStructure').value.trim();
+            if (!structure) {
+                document.getElementById('sqlOutput').textContent = 'Please enter a database structure.';
+                return;
+            }
+            document.getElementById('sqlOutput').textContent = 'Generating SQL...';
+
+            // For demonstration, we'll use OpenAI API (replace with your backend endpoint)
+            const apiKey = 'YOUR_OPENAI_API_KEY'; // Replace with your API key or backend proxy
+            const prompt = `Given this database structure: "${structure}", write SQL CREATE TABLE statements for it.`;
+
+            try {
+                const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${apiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: "gpt-3.5-turbo",
+                        messages: [{role: "user", content: prompt}],
+                        max_tokens: 512,
+                        temperature: 0
+                    })
+                });
+                const data = await response.json();
+                const sql = data.choices?.[0]?.message?.content || 'No SQL generated.';
+                document.getElementById('sqlOutput').textContent = sql;
+            } catch (e) {
+                document.getElementById('sqlOutput').textContent = 'Error generating SQL. Check your API key or network.';
+            }
+        }
+    </script>
+</body>
+</html>

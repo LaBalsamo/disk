@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="control">
+        <form>
+            <input type="button" value="полити">
+            <input type="range" name="Час" id="time_puor">
+
+            <button id="autoButton" onclick="toggleIndicator">Авто</button>
+            <div id="statusIndicator"></div>
+    
+    </div>
+    <div id="stat">
+
+    </div>
+
+<script>
+    let isIndicatorOn = false;
+
+function toggleIndicator() {
+    const indicator = document.getElementById("statusIndicator");
+    isIndicatorOn = !isIndicatorOn;
+
+    if (isIndicatorOn) {
+        indicator.style.backgroundColor = "green";
+    } else {
+        indicator.style.backgroundColor = "red";
+    }
+}
+    </script>
+</body>
+</html>

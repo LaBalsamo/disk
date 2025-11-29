@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woda zdrowia Doda!</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f8ff;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .left-panel, .right-panel {
+            width: 48%;
+        }
+        .image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Woda zdrowia Doda!</h1>
+    <div class="container">
+        <div class="left-panel">
+            <form name="formularz">
+                <label for="woda">Rodzaj wody:</label>
+                <select name="woda" id="woda">
+                    <option value="z">Woda Żywiec (3 PLN)</option>
+                    <option value="m">Woda Muszyna (2 PLN)</option>
+                    <option value="c">Woda Cisowianka (2.50 PLN)</option>
+                </select><br><br>
+                <label for="ile">Liczba butelek:</label>
+                <input type="number" name="ile" id="ile" value="1"><br><br>
+                <button type="button" onclick="oblicz()">Oblicz</button>
+            </form>
+            <p id="cena"></p>
+        </div>
+        <div class="right-panel">
+            <img src="path/to/your/image.jpg" alt="Mountain Lake" class="image">
+        </div>
+    </div>
+    <div class="footer">
+        <p>Autor strony: Jan Abacki</p>
+        <p>24.02.2075 09:21</p>
+    </div>
+
+    <script>
+        function oblicz() {
+            let wynik = 0;
+            let typ = document.forms['formularz']['woda'].value;
+            let ile = document.forms['formularz']['ile'].value;
+
+            if (typ == 'z'){
+                wynik += 3*ile;
+            }
+            else if(typ == 'm'){
+                wynik +=2*ile;
+            }
+            else if(typ == 'c'){
+                wynik += 2.5*ile;
+            }
+
+            document.getElementById('cena').innerHTML= 'Cena: ' + wynik + ' PLN';
+        }
+    </script>
+</body>
+</html>
