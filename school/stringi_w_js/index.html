@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         
+        let wers1 = "Mały kotek siedzi w koszu";
+        let wers2 = "Patrzy cicho, bez hałasu";
+        let wers3 = "Mleko lubi, myszki goni";
+        let wers4 = "I uśmiecha się do pani";
+
+        let wierszyk = wers1 + "<br>" + wers2 + "<br>" + wers3 + "<br>" + wers4;
+
+        document.write(wierszyk);
+
+        //2------
+        let imie = "Arek";
+        let wiek = 16;
+        let zwierze = "kot";
+
+        let tekst = `Mam na imię ${imie}, mam ${wiek} lat i moim ulubionym zwierzęciem jest ${zwierze}.`;
+
+        document.write("<br><br>" + tekst);
+
+        //3------
+        let cenaA = 12;
+        let cenaB = 8;
+
+        let suma = cenaA + cenaB;
+
+        let wynik = `
+            <br><br>
+            Cena produktu A: ${cenaA} zł<br>
+            Cena produktu B: ${cenaB} zł<br>
+            Suma do zapłaty: ${suma} zł
+        `;
+
+        document.write(wynik);
+
+
+        let imie1 = "Krzysztof";
+
+        document.write("Imię: " + imie1 + "<br>");
+        document.write("Długość imienia: " + imie1.length + "<br>");
+        document.write("Pierwsza litera: " + imie1[0] + "<br>");
+        document.write("Ostatnia litera: " + imie1[imie1.length - 1] + "<br><br>");
+
+          const text = "Ala ma kota, a kot ma Alę";
+
+        if (text.includes("kot")) {
+            document.write("Znaleziono słowo kot<br><br>");
+        } else {
+            document.write("Nie znaleziono słowa kot<br><br>");
+        }
+
+
+            const zdanie = "Ala ma kota";
+        const noweZdanie = zdanie.replace("kota", "psa");
+
+        document.write("Oryginał: " + zdanie + "<br>");
+        document.write("Po zmianie: " + noweZdanie + "<br><br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
