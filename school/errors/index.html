@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function test(){
+        var num = parseInt(document.getElementById("num").value);
+        var num2 = parseInt(document.getElementById("num2").value);
+        var num3 = parseInt(document.getElementById("lst_lenght").value);
+        var lst = [1, 2, 3, 4, 5];
+
+        if(isNaN(num)){
+            alert("No number");
+        }else{
+            sum  = num + num2;
+            alert(sum+ " is a suma");
+        }
+
+        if (num3 > 0 && num3 <= lst.length){
+            for (let i = 0; i < num3; i++) {
+                console.log(lst[i]);
+                }
+            }
+        }
+        try {
+            var result = num / num2;
+            if (isNaN(result)) {
+                throw new Error("Result is not a number");
+            }
+            alert(result + " is a division");
+        } catch (error) {
+            alert(error.message);
+        }
+    
+    </script>
+</head>
+<body><form action="POST">
+    <input type="text" id="num" placeholder="Enter a number">
+    <input type="text" id="num2" placeholder="Enter a 2 number">
+    <input type="text" id="lst_lenght" placeholder="Enter a number">
+    <input type="button" value="Submit" onclick="test()">
+</form>
+   
+</body>
+</html>
